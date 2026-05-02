@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Valeska Vidal – Nutricionista. Nutrición integral, baja de peso y grasa corporal. Consultas online en Chile.">
+  <title>Valeska Vidal | Nutricionista · Chile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #6B2037;
+      --green-mid:   #A33350;
+      --green-light: #C4788A;
+      --green-pale:  #F2D5DA;
+      --dark:        #1C1919;
+      --dark-2:      #2A2222;
+      --white:       #FFFFFF;
+      --off-white:   #FAF5EF;
+      --gray-100:    #F0E8DF;
+      --gray-200:    #DDD0C4;
+      --gray-400:    #A08878;
+      --gray-600:    #5E4A42;
+      --grad:        linear-gradient(135deg, #6B2037 0%, #A33350 100%);
+      --grad-hero:   linear-gradient(170deg, #110D0D 0%, #1C1717 50%, #110D0D 100%);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--gray-100); }
+    ::-webkit-scrollbar-thumb { background: var(--green-mid); border-radius: 3px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 2.5rem; transition: all .35s ease;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,.95); backdrop-filter: blur(18px);
+      box-shadow: 0 2px 20px rgba(0,0,0,.07);
+    }
+    .nav-brand {
+      font-family: 'Poppins', sans-serif; font-weight: 800; font-size: .95rem;
+      letter-spacing: .04em; color: var(--white); text-decoration: none;
+      transition: color .3s;
+    }
+    nav.scrolled .nav-brand { color: var(--dark); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: .85rem; font-weight: 500; color: rgba(255,255,255,.8);
+      text-decoration: none; transition: color .2s;
+    }
+    nav.scrolled .nav-links a { color: var(--gray-600); }
+    .nav-links a:hover { color: var(--green-light); }
+    nav.scrolled .nav-links a:hover { color: var(--green); }
+    .nav-cta {
+      background: var(--grad); color: var(--white) !important;
+      padding: .48rem 1.2rem; border-radius: 50px; font-weight: 700 !important;
+      font-size: .82rem !important; box-shadow: 0 4px 14px rgba(163,51,80,.4);
+      transition: all .2s !important;
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(163,51,80,.55) !important; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all .3s; }
+    nav.scrolled .nav-hamburger span { background: var(--dark); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; background: var(--grad-hero);
+      display: flex; align-items: center; justify-content: center;
+      padding: 100px 2rem 5rem; position: relative; overflow: hidden;
+    }
+    .hero-orb {
+      position: absolute; border-radius: 50%; pointer-events: none;
+    }
+    .hero-orb-1 {
+      width: 600px; height: 600px; top: -150px; right: -150px;
+      background: radial-gradient(circle, rgba(163,51,80,.1) 0%, transparent 70%);
+    }
+    .hero-orb-2 {
+      width: 400px; height: 400px; bottom: -100px; left: -100px;
+      background: radial-gradient(circle, rgba(107,32,55,.12) 0%, transparent 70%);
+    }
+    .hero-orb-3 {
+      width: 300px; height: 300px; top: 40%; left: 50%;
+      background: radial-gradient(circle, rgba(196,120,138,.06) 0%, transparent 70%);
+    }
+    .hero-inner {
+      position: relative; z-index: 1; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+      max-width: 1060px; width: 100%;
+    }
+
+    /* ── IG CARD ── */
+    .ig-card {
+      width: 100%;
+      background: rgba(255,255,255,.04); backdrop-filter: blur(24px);
+      border: 1px solid rgba(163,51,80,.2); border-radius: 26px;
+      padding: 1.75rem; box-shadow: 0 30px 60px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.07);
+    }
+    .ig-top { display: flex; gap: 1.25rem; align-items: flex-start; margin-bottom: 1.1rem; }
+    .ig-ring {
+      flex-shrink: 0; width: 84px; height: 84px; border-radius: 50%;
+      padding: 3px;
+      background: conic-gradient(#A33350, #6B2037, #C4788A, #4A1525, #A33350);
+    }
+    .ig-ring img {
+      width: 100%; height: 100%; border-radius: 50%;
+      border: 3px solid #110D0D; object-fit: cover; display: block;
+    }
+    .ig-ring img[data-broken] { display: none; }
+    .ig-ring-fallback {
+      display: none; width: 100%; height: 100%; border-radius: 50%;
+      border: 3px solid #110D0D; background: var(--grad);
+      align-items: center; justify-content: center;
+      font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.6rem;
+      color: white;
+    }
+    .ig-ring img[data-broken] + .ig-ring-fallback { display: flex; }
+    .ig-info { flex: 1; min-width: 0; }
+    .ig-name-row { display: flex; align-items: center; gap: .4rem; margin-bottom: .12rem; }
+    .ig-name {
+      font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1rem;
+      color: var(--white); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .ig-handle {
+      display: block; font-size: .78rem; color: var(--green-light);
+      text-decoration: none; margin-bottom: .3rem;
+    }
+    .ig-handle:hover { text-decoration: underline; }
+    .ig-cat { font-size: .7rem; color: rgba(255,255,255,.4); }
+
+    .ig-stats {
+      display: flex; border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px; overflow: hidden; margin-bottom: 1rem;
+    }
+    .ig-stat { flex: 1; text-align: center; padding: .55rem .4rem; }
+    .ig-stat + .ig-stat { border-left: 1px solid rgba(255,255,255,.1); }
+    .ig-stat-n {
+      font-family: 'Poppins', sans-serif; font-weight: 700;
+      font-size: .95rem; color: var(--white); line-height: 1.2;
+    }
+    .ig-stat-l { font-size: .6rem; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .06em; }
+
+    .ig-bio {
+      font-size: .82rem; color: rgba(255,255,255,.75);
+      line-height: 1.55; margin-bottom: .9rem;
+    }
+
+    .ig-btns { display: flex; gap: .5rem; margin-bottom: 1.25rem; }
+    .ig-btn {
+      flex: 1; padding: .48rem .4rem; border-radius: 9px;
+      font-size: .75rem; font-weight: 600; text-align: center;
+      text-decoration: none; border: none; cursor: pointer; transition: all .2s;
+    }
+    .ig-btn-fill { background: var(--grad); color: var(--white); box-shadow: 0 4px 12px rgba(163,51,80,.3); }
+    .ig-btn-fill:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(163,51,80,.45); }
+    .ig-btn-ghost { background: transparent; color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.2); }
+    .ig-btn-ghost:hover { background: rgba(255,255,255,.1); }
+
+    .ig-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; border-radius: 12px; overflow: hidden; }
+    .ig-grid-item {
+      width: 100%; aspect-ratio: 1; object-fit: cover; display: block;
+      transition: transform .3s;
+    }
+    .ig-grid-item:hover { transform: scale(1.06); }
+    .ig-grid-placeholder {
+      width: 100%; aspect-ratio: 1; display: block;
+      background: linear-gradient(135deg, var(--dark-2), rgba(163,51,80,.15));
+      transition: opacity .3s;
+    }
+    .ig-grid-placeholder:hover { opacity: .8; }
+
+    /* ── HERO TEXT ── */
+    .hero-text { text-align: left; }
+    .hero-eyebrow {
+      display: inline-block; font-size: .72rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--green-light);
+      border: 1px solid rgba(163,51,80,.35); border-radius: 50px;
+      padding: .35rem 1rem; margin-bottom: 1rem;
+    }
+    .hero-h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2rem,4.5vw,3.2rem); font-weight: 900;
+      color: var(--white); line-height: 1.12; margin-bottom: 1.2rem;
+    }
+    .hero-h1 em { font-style: normal; color: var(--green-light); }
+    .hero-sub {
+      font-size: .97rem; color: rgba(255,255,255,.58); max-width: 460px;
+      line-height: 1.75; margin-bottom: 1.75rem;
+    }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: rgba(163,51,80,.12); border: 1px solid rgba(163,51,80,.3);
+      border-radius: 50px; padding: .38rem 1rem;
+      color: var(--green-light); font-size: .8rem; font-weight: 600;
+    }
+    .hero-pill svg { width: 14px; height: 14px; }
+    .hero-btns { display: flex; gap: .9rem; flex-wrap: wrap; }
+    .btn-hero {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .8rem 1.8rem; border-radius: 50px;
+      font-size: .9rem; font-weight: 700; text-decoration: none;
+      transition: all .25s; cursor: pointer; border: none;
+    }
+    .btn-hero-fill { background: var(--grad); color: var(--white); box-shadow: 0 8px 22px rgba(163,51,80,.4); }
+    .btn-hero-fill:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(163,51,80,.55); }
+    .btn-hero-ghost {
+      background: transparent; color: rgba(255,255,255,.8);
+      border: 1.5px solid rgba(255,255,255,.25);
+    }
+    .btn-hero-ghost:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); }
+    .community-pill {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(163,51,80,.1); border: 1px solid rgba(163,51,80,.25);
+      border-radius: 50px; padding: .5rem 1.25rem;
+      color: var(--green-light); font-size: .88rem; font-weight: 600; margin-top: 1.2rem;
+    }
+
+    /* ── LAYOUT ── */
+    section { padding: 6rem 2rem; }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    .s-tag {
+      font-size: .72rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--green); margin-bottom: .65rem;
+    }
+    .s-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.7rem,3.5vw,2.5rem); font-weight: 800;
+      color: var(--dark); line-height: 1.2; margin-bottom: .9rem;
+    }
+    .s-desc { font-size: 1rem; color: var(--gray-600); line-height: 1.75; max-width: 600px; }
+
+    /* ── SOBRE MÍ ── */
+    .about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-body { font-size: .97rem; color: var(--gray-600); line-height: 1.8; margin-bottom: 1.5rem; }
+    .about-list {
+      list-style: none; display: flex; flex-direction: column; gap: .65rem;
+      margin-bottom: 1.5rem;
+    }
+    .about-list li {
+      display: flex; align-items: flex-start; gap: .75rem;
+      font-size: .95rem; color: var(--gray-600); line-height: 1.55;
+    }
+    .about-list li::before {
+      content: '✓'; flex-shrink: 0; width: 22px; height: 22px;
+      background: var(--grad); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .65rem; font-weight: 900; color: white; margin-top: .1rem;
+    }
+    .pills { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 2rem; }
+    .pill {
+      display: inline-flex; align-items: center; gap: .3rem;
+      padding: .35rem .85rem; border-radius: 50px;
+      font-size: .78rem; font-weight: 600;
+    }
+    .pill-g { background: #FDF0F3; color: #6B2037; border: 1px solid #F0C4CC; }
+    .pill-m { background: #FAF0F0; color: #7A2040; border: 1px solid #EAC0C8; }
+    .pill-t { background: #FDF5F0; color: #5E3830; border: 1px solid #E8D0C4; }
+    .btns-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .8rem 1.75rem; border-radius: 50px;
+      font-size: .9rem; font-weight: 600; text-decoration: none;
+      transition: all .25s; border: none; cursor: pointer;
+    }
+    .btn-fill { background: var(--grad); color: var(--white); box-shadow: 0 6px 18px rgba(107,32,55,.3); }
+    .btn-fill:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(107,32,55,.45); }
+    .btn-line { background: transparent; color: var(--green); border: 2px solid var(--green); }
+    .btn-line:hover { background: var(--green); color: var(--white); }
+
+    .about-photo-wrap {
+      position: relative; display: flex; justify-content: center; align-items: center;
+    }
+    .about-photo-bg {
+      position: absolute; width: 85%; height: 85%; border-radius: 24px;
+      background: linear-gradient(135deg, var(--green-pale), rgba(163,51,80,.15));
+      transform: rotate(-4deg); top: 6%;
+    }
+    .about-photo {
+      position: relative; width: 85%; border-radius: 24px; overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,.14);
+    }
+    .about-photo img {
+      width: 100%; display: block; object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+    .about-photo-placeholder {
+      width: 100%; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #F2D5DA, #E8B8C2);
+      font-family: 'Poppins', sans-serif; font-size: 5rem; color: rgba(107,32,55,.3);
+    }
+    .about-badge {
+      position: absolute; bottom: -1.2rem; right: -1rem;
+      background: var(--white); border-radius: 16px; padding: .9rem 1.2rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,.12);
+      display: flex; align-items: center; gap: .7rem; z-index: 2;
+    }
+    .about-badge-ico { font-size: 1.6rem; }
+    .about-badge-n { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--green); line-height: 1; }
+    .about-badge-l { font-size: .7rem; color: var(--gray-400); }
+
+    /* ── SERVICIOS ── */
+    .services { background: var(--off-white); }
+    .services-head { margin-bottom: 3.5rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .svc {
+      background: var(--white); border-radius: 20px; padding: 2rem;
+      border: 1px solid var(--gray-200); position: relative; overflow: hidden;
+      transition: all .3s ease;
+    }
+    .svc::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--grad); transform: scaleX(0); transform-origin: left;
+      transition: transform .35s ease;
+    }
+    .svc:hover { transform: translateY(-7px); box-shadow: 0 22px 44px rgba(107,32,55,.1); border-color: transparent; }
+    .svc:hover::after { transform: scaleX(1); }
+    .svc-ico {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: linear-gradient(135deg, #FDF0F3, #F5D8DF);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1.25rem;
+    }
+    .svc-name { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1rem; color: var(--dark); margin-bottom: .55rem; }
+    .svc-body { font-size: .875rem; color: var(--gray-600); line-height: 1.65; }
+    .svc-footer { margin-top: 3.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── MÉTRICAS ── */
+    .metrics { background: var(--grad-hero); padding: 5rem 2rem; }
+    .metrics-grid {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      border-radius: 22px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,.07);
+    }
+    .mitem {
+      padding: 2.75rem 1.5rem; text-align: center;
+      border-right: 1px solid rgba(255,255,255,.07);
+      transition: background .3s;
+    }
+    .mitem:last-child { border-right: none; }
+    .mitem:hover { background: rgba(255,255,255,.04); }
+    .mnum {
+      font-family: 'Poppins', sans-serif; font-size: 2.8rem;
+      font-weight: 900; color: var(--white); line-height: 1; margin-bottom: .4rem;
+    }
+    .mnum .accent { color: var(--green-light); }
+    .mlabel { font-size: .78rem; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .09em; }
+    .metrics-sub { text-align: center; margin-top: 2.5rem; color: rgba(255,255,255,.35); font-size: .82rem; }
+
+    /* ── GALERÍA ── */
+    .gallery { background: var(--white); }
+    .gallery-head { margin-bottom: 3rem; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: .65rem; }
+    .g-item { border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; }
+    .g-item img {
+      width: 100%; aspect-ratio: 1; object-fit: cover;
+      display: block; transition: transform .5s ease;
+    }
+    .g-item:hover img { transform: scale(1.09); }
+    .g-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(107,32,55,.65), transparent);
+      opacity: 0; transition: opacity .3s;
+      display: flex; align-items: flex-end; padding: .75rem;
+    }
+    .g-item:hover .g-overlay { opacity: 1; }
+    .g-overlay-text { color: white; font-size: .75rem; font-weight: 600; }
+    .g-item.wide { grid-column: span 2; grid-row: span 2; }
+    .g-placeholder {
+      width: 100%; aspect-ratio: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-size: 2rem; color: rgba(107,32,55,.25);
+      transition: all .3s;
+    }
+    .g-placeholder-label { font-size: .7rem; color: rgba(107,32,55,.2); margin-top: .4rem; font-weight: 500; }
+    .g-item:hover .g-placeholder { color: rgba(107,32,55,.45); }
+    .gallery-cta { text-align: center; margin-top: 2.5rem; }
+
+    /* ── PROCESO ── */
+    .process { background: var(--off-white); }
+    .process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; margin-top: 3.5rem; position: relative; }
+    .process-steps::before {
+      content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 2px;
+      background: linear-gradient(90deg, var(--green-pale), var(--green-mid), var(--green-pale));
+    }
+    .pstep { text-align: center; position: relative; }
+    .pstep-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--grad); color: white; font-family: 'Poppins', sans-serif;
+      font-weight: 800; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem; position: relative; z-index: 1;
+      box-shadow: 0 8px 20px rgba(107,32,55,.35);
+    }
+    .pstep-name { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: .95rem; color: var(--dark); margin-bottom: .45rem; }
+    .pstep-body { font-size: .82rem; color: var(--gray-600); line-height: 1.6; }
+
+    /* ── CONTACTO ── */
+    .contact { background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-info { }
+    .contact-cards { margin-top: 2rem; display: flex; flex-direction: column; gap: .75rem; }
+    .ccard {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--off-white); border: 1px solid var(--gray-200);
+      border-radius: 16px; padding: 1.1rem 1.25rem; text-decoration: none;
+      color: var(--dark); font-weight: 500; font-size: .9rem;
+      transition: all .25s;
+    }
+    .ccard:hover { border-color: var(--green-mid); box-shadow: 0 8px 24px rgba(107,32,55,.12); transform: translateX(5px); }
+    .ccard-ico { font-size: 1.7rem; flex-shrink: 0; }
+    .ccard-label { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--gray-400); display: block; font-weight: 400; }
+    .ccard-val { font-size: .88rem; color: var(--dark); font-weight: 600; }
+    .ccard-arr { margin-left: auto; color: var(--green-mid); font-size: 1.1rem; }
+
+    .contact-box {
+      background: var(--off-white); border-radius: 24px;
+      padding: 2.25rem; border: 1px solid var(--gray-200);
+    }
+    .contact-box-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--dark); margin-bottom: .4rem; }
+    .contact-box-sub { font-size: .88rem; color: var(--gray-400); margin-bottom: 1.75rem; }
+    .fg { margin-bottom: 1.2rem; }
+    .fl { display: block; font-size: .82rem; font-weight: 600; color: var(--dark); margin-bottom: .45rem; }
+    .fi, .ft {
+      width: 100%; padding: .85rem 1rem;
+      border: 1.5px solid var(--gray-200); border-radius: 12px;
+      font-size: .9rem; font-family: 'Inter',sans-serif;
+      color: var(--dark); background: var(--white); outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .fi:focus, .ft:focus { border-color: var(--green-mid); box-shadow: 0 0 0 3px rgba(163,51,80,.14); }
+    .ft { resize: vertical; min-height: 115px; }
+    .btn-submit {
+      width: 100%; padding: .95rem; border-radius: 12px;
+      background: var(--grad); color: var(--white); border: none;
+      font-size: .95rem; font-weight: 700; font-family: 'Poppins',sans-serif;
+      cursor: pointer; transition: all .25s; display: flex; align-items: center; justify-content: center; gap: .5rem;
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(107,32,55,.35); }
+
+    /* ── AGENDA ── */
+    .booking-section { background: var(--off-white); }
+    .booking-header { margin-bottom: 2.5rem; }
+
+    .booking-card {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: 22px; padding: 2.25rem 2.5rem;
+      box-shadow: 0 8px 32px rgba(107,32,55,.07);
+      margin-bottom: 2rem;
+    }
+    .booking-card-left { display: flex; align-items: flex-start; gap: 1.5rem; flex: 1; min-width: 260px; }
+    .booking-cal-icon {
+      flex-shrink: 0; width: 72px; height: 72px; border-radius: 18px;
+      background: var(--grad); color: white;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 20px rgba(107,32,55,.3);
+    }
+    .booking-card-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--dark); margin-bottom: .5rem; }
+    .booking-card-sub { font-size: .875rem; color: var(--gray-600); line-height: 1.65; max-width: 480px; }
+    .booking-cta-btn {
+      display: inline-flex; align-items: center; gap: .6rem; flex-shrink: 0;
+      background: var(--grad); color: white;
+      padding: 1rem 2rem; border-radius: 50px;
+      font-family: 'Poppins', sans-serif; font-weight: 700; font-size: .95rem;
+      text-decoration: none; white-space: nowrap;
+      box-shadow: 0 8px 22px rgba(107,32,55,.35);
+      transition: all .25s;
+    }
+    .booking-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(107,32,55,.5); }
+
+    .booking-details {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;
+    }
+    .bdetail {
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: 16px; padding: 1.25rem 1rem; text-align: center;
+      transition: all .25s;
+    }
+    .bdetail:hover { border-color: var(--green-mid); box-shadow: 0 6px 20px rgba(107,32,55,.08); transform: translateY(-3px); }
+    .bdetail-ico { font-size: 1.6rem; margin-bottom: .5rem; }
+    .bdetail-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .07em; color: var(--gray-400); margin-bottom: .3rem; }
+    .bdetail-val { font-size: .82rem; font-weight: 600; color: var(--dark); }
+    .bdetail-val a { color: var(--green); text-decoration: none; }
+    .bdetail-val a:hover { text-decoration: underline; }
+
+    @media (max-width: 900px) {
+      .booking-card { flex-direction: column; }
+      .booking-cta-btn { width: 100%; justify-content: center; }
+      .booking-details { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .booking-details { grid-template-columns: repeat(2, 1fr); }
+      .booking-card { padding: 1.5rem; }
+      .booking-card-left { flex-direction: column; gap: 1rem; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); padding: 3.5rem 2rem 2rem;
+      text-align: center;
+    }
+    .footer-logo { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--white); margin-bottom: .5rem; }
+    .footer-sub { font-size: .82rem; color: rgba(255,255,255,.35); margin-bottom: 2rem; }
+    .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap; }
+    .footer-links a { font-size: .83rem; color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--green-light); }
+    .footer-social { display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
+    .fsoc {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(255,255,255,.07); display: flex; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 1.1rem; transition: all .2s;
+    }
+    .fsoc:hover { background: var(--green); transform: translateY(-2px); }
+    .footer-copy { font-size: .75rem; color: rgba(255,255,255,.18); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-text { text-align: center; }
+      .hero-pills { justify-content: center; }
+      .hero-btns { justify-content: center; }
+      .community-pill { display: none; }
+      .ig-card { max-width: 400px; margin: 0 auto; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .metrics-grid { grid-template-columns: repeat(2,1fr); }
+      .mitem:nth-child(2) { border-right: none; }
+      .gallery-grid { grid-template-columns: repeat(2,1fr); }
+      .g-item.wide { grid-column: span 1; grid-row: span 1; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .process-steps::before { display: none; }
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+    @media (max-width: 540px) {
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      section { padding: 4rem 1.25rem; }
+      .hero { padding: 90px 1.25rem 4rem; }
+    }
+
+    /* ── ANIM ── */
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-brand" href="#">Valeska Vidal</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#agenda">Agenda</a></li>
+    <li><a href="#contacto" class="nav-cta">Agendar consulta →</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <div class="hero-inner">
+
+    <!-- IG Card -->
+    <div class="ig-card fade-up">
+      <div class="ig-top">
+        <div class="ig-ring">
+          <img
+            src="valeska-vidal.png"
+            alt="Valeska Vidal"
+            onerror="this.setAttribute('data-broken','1')"
+          >
+          <div class="ig-ring-fallback">VV</div>
+        </div>
+        <div class="ig-info">
+          <div class="ig-name-row">
+            <span class="ig-name">Valeska Vidal</span>
+          </div>
+          <a class="ig-handle" href="https://www.instagram.com/nutricionista_valevidal/" target="_blank" rel="noopener">@nutricionista_valevidal</a>
+          <span class="ig-cat">Nutricionista · Chile</span>
+        </div>
+      </div>
+
+      <div class="ig-stats">
+        <div class="ig-stat">
+          <div class="ig-stat-n">2.020</div>
+          <div class="ig-stat-l">Seguidores</div>
+        </div>
+        <div class="ig-stat">
+          <div class="ig-stat-n">123</div>
+          <div class="ig-stat-l">Posts</div>
+        </div>
+        <div class="ig-stat">
+          <div class="ig-stat-n">100%</div>
+          <div class="ig-stat-l">Online</div>
+        </div>
+      </div>
+
+      <p class="ig-bio">Nutricionista | Nutrición integral & baja de peso 🌿 Consultas online · Chile</p>
+
+      <div class="ig-btns">
+        <a class="ig-btn ig-btn-fill" href="https://wa.me/56975178135" target="_blank" rel="noopener">💬 Agendar</a>
+        <a class="ig-btn ig-btn-ghost" href="https://www.instagram.com/nutricionista_valevidal/" target="_blank" rel="noopener">📸 Instagram</a>
+      </div>
+
+      <div class="ig-grid" id="igGrid">
+        <img class="ig-grid-item" src="valeska-vidal.png" alt="Valeska Vidal" onerror="this.style.display='none'">
+        <div class="ig-grid-placeholder" style="background:linear-gradient(135deg,#2A1218,rgba(163,51,80,.12))"></div>
+        <div class="ig-grid-placeholder" style="background:linear-gradient(135deg,rgba(163,51,80,.1),#1C1717)"></div>
+        <div class="ig-grid-placeholder" style="background:linear-gradient(135deg,#1C1717,rgba(196,120,138,.1))"></div>
+        <div class="ig-grid-placeholder" style="background:linear-gradient(135deg,rgba(107,32,55,.2),#2A1218)"></div>
+        <div class="ig-grid-placeholder" style="background:linear-gradient(135deg,#2A1218,rgba(163,51,80,.08))"></div>
+      </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-text fade-up" style="transition-delay:.15s">
+      <span class="hero-eyebrow">🌿 Nutricionista Certificada</span>
+      <h1 class="hero-h1">
+        Transforma tu<br>
+        relación con <em>la comida</em><br>
+        y tu cuerpo
+      </h1>
+      <p class="hero-sub">
+        Planes nutricionales 100% personalizados para bajar de peso, reducir grasa corporal y vivir con energía — desde donde estés.
+      </p>
+      <div class="hero-pills">
+        <span class="hero-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Nutrición integral
+        </span>
+        <span class="hero-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Consultas online y presencial
+        </span>
+        <span class="hero-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Baja de peso y grasa
+        </span>
+        <span class="hero-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Salud metabólica y hormonal
+        </span>
+        <span class="hero-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Evaluación ISAK + composición corporal
+        </span>
+      </div>
+      <div class="hero-btns">
+        <a class="btn-hero btn-hero-fill" href="https://wa.me/56975178135" target="_blank" rel="noopener">
+          💬 Agendar por WhatsApp
+        </a>
+        <a class="btn-hero btn-hero-ghost" href="#servicios">
+          Ver servicios
+        </a>
+      </div>
+      <div class="community-pill">
+        <span>🌱</span>
+        <span>+2.000 personas siguiendo el camino</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section class="about" id="sobre">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="fade-up">
+        <p class="s-tag">Sobre mí</p>
+        <h2 class="s-title">Hola, soy <span style="color:var(--green)">Valeska Vidal</span></h2>
+        <p class="about-body">
+          Soy nutricionista deportiva con enfoque en salud metabólica. Trabajo ayudando a personas a mejorar su composición corporal, rendimiento y relación con la comida a través de estrategias personalizadas y basadas en evidencia.
+        </p>
+        <p class="about-body" style="font-weight:700; color:var(--green); margin-bottom:.75rem;">Este servicio es para ti si:</p>
+        <ul class="about-list">
+          <li>Has intentado bajar de peso y te estancas</li>
+          <li>Sientes que comes poco y no ves resultados</li>
+          <li>Quieres mejorar tu composición corporal (no solo el peso)</li>
+          <li>Buscas rendir mejor en el deporte</li>
+          <li>Te interesa entender tu metabolismo y no hacer dietas</li>
+          <li>Estás en etapa de cambios hormonales (perimenopausia / menopausia)</li>
+        </ul>
+        <div class="pills">
+          <span class="pill pill-g">🥗 Nutrición integral</span>
+          <span class="pill pill-m">📱 Consultas online</span>
+          <span class="pill pill-g">⚖️ Baja de peso</span>
+          <span class="pill pill-m">🔥 Reducción de grasa</span>
+        </div>
+        <div class="btns-row">
+          <a class="btn btn-fill" href="https://wa.me/56975178135" target="_blank" rel="noopener">💬 Escribir por WhatsApp</a>
+          <a class="btn btn-line" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+      <div class="about-photo-wrap fade-up" style="transition-delay:.15s">
+        <div class="about-photo-bg"></div>
+        <div class="about-photo">
+          <img
+            src="valeska-vidal.png"
+            alt="Valeska Vidal Nutricionista"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          >
+          <div class="about-photo-placeholder" style="display:none">🌿</div>
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-ico">🌿</div>
+          <div>
+            <div class="about-badge-n">2.020</div>
+            <div class="about-badge-l">seguidores en IG</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="services-head fade-up">
+      <p class="s-tag">Servicios</p>
+      <h2 class="s-title">¿En qué te puedo ayudar?</h2>
+      <p class="s-desc">Cada plan es diseñado específicamente para ti, con seguimiento continuo para asegurarnos de que llegues a tus metas.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc fade-up">
+        <div class="svc-ico">🥦</div>
+        <div class="svc-name">Nutrición Integral</div>
+        <p class="svc-body">Un plan nutricional completo y equilibrado, adaptado a tu estilo de vida, gustos y necesidades reales. Sin prohibiciones extremas.</p>
+      </div>
+      <div class="svc fade-up" style="transition-delay:.1s">
+        <div class="svc-ico">💻</div>
+        <div class="svc-name">Consultas Online</div>
+        <p class="svc-body">Atiende desde la comodidad de tu hogar. Consultas por videollamada con seguimiento, ajustes de plan y soporte continuo.</p>
+      </div>
+      <div class="svc fade-up" style="transition-delay:.2s">
+        <div class="svc-ico">⚖️</div>
+        <div class="svc-name">Baja de Peso</div>
+        <p class="svc-body">Estrategias efectivas y sostenibles para reducir peso de forma saludable, respetando tu metabolismo y tu bienestar.</p>
+      </div>
+      <div class="svc fade-up" style="transition-delay:.3s">
+        <div class="svc-ico">🔥</div>
+        <div class="svc-name">Reducción de Grasa Corporal</div>
+        <p class="svc-body">Plan enfocado en mejorar tu composición corporal: reducir la grasa acumulada y mantener o aumentar la masa muscular.</p>
+      </div>
+      <div class="svc fade-up" style="transition-delay:.4s">
+        <div class="svc-ico">🩺</div>
+        <div class="svc-name">Salud Metabólica y Hormonal</div>
+        <p class="svc-body">Abordaje nutricional enfocado en equilibrar el metabolismo y el sistema hormonal, mejorando energía, ciclos y bienestar general.</p>
+      </div>
+      <div class="svc fade-up" style="transition-delay:.5s">
+        <div class="svc-ico">📐</div>
+        <div class="svc-name">Evaluación ISAK + Composición Corporal</div>
+        <p class="svc-body">Medición antropométrica con protocolo ISAK para determinar con precisión tu composición corporal: masa grasa, masa muscular y distribución de tejidos.</p>
+      </div>
+    </div>
+    <div class="svc-footer fade-up">
+      <a class="btn btn-fill" href="https://wa.me/56975178135?text=Hola%20Valeska,%20me%20interesa%20una%20consulta" target="_blank" rel="noopener">💬 Consultar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="process">
+  <div class="wrap">
+    <div class="fade-up" style="text-align:center;max-width:600px;margin:0 auto 1rem">
+      <p class="s-tag">Cómo funciona</p>
+      <h2 class="s-title">Tu camino hacia el bienestar</h2>
+    </div>
+    <div class="process-steps">
+      <div class="pstep fade-up">
+        <div class="pstep-num">1</div>
+        <div class="pstep-name">Primera consulta</div>
+        <p class="pstep-body">Conversamos sobre tus objetivos, historia clínica y hábitos alimenticios actuales.</p>
+      </div>
+      <div class="pstep fade-up" style="transition-delay:.1s">
+        <div class="pstep-num">2</div>
+        <div class="pstep-name">Plan personalizado</div>
+        <p class="pstep-body">Diseño un plan nutricional adaptado exclusivamente a ti, tus tiempos y tus metas.</p>
+      </div>
+      <div class="pstep fade-up" style="transition-delay:.2s">
+        <div class="pstep-num">3</div>
+        <div class="pstep-name">Seguimiento continuo</div>
+        <p class="pstep-body">Controles regulares para ajustar el plan y mantenerte en el camino correcto.</p>
+      </div>
+      <div class="pstep fade-up" style="transition-delay:.3s">
+        <div class="pstep-num">4</div>
+        <div class="pstep-name">Resultados reales</div>
+        <p class="pstep-body">Cambios sostenibles que mejoran tu calidad de vida a largo plazo, no solo a corto plazo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTRICAS -->
+<section class="metrics">
+  <div class="wrap">
+    <div class="metrics-grid">
+      <div class="mitem">
+        <div class="mnum">2<span class="accent">K</span></div>
+        <div class="mlabel">Seguidores en Instagram</div>
+      </div>
+      <div class="mitem">
+        <div class="mnum">123<span class="accent">+</span></div>
+        <div class="mlabel">Publicaciones de valor</div>
+      </div>
+      <div class="mitem">
+        <div class="mnum">100<span class="accent">%</span></div>
+        <div class="mlabel">Planes personalizados</div>
+      </div>
+      <div class="mitem">
+        <div class="mnum"><span class="accent">∞</span></div>
+        <div class="mlabel">Compromiso con tu salud</div>
+      </div>
+    </div>
+    <p class="metrics-sub">Datos tomados de @nutricionista_valevidal en Instagram · 2025</p>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <div class="gallery-head fade-up" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+      <div>
+        <p class="s-tag">Galería</p>
+        <h2 class="s-title">Contenido & Comunidad</h2>
+      </div>
+      <a class="btn btn-line" href="https://www.instagram.com/nutricionista_valevidal/" target="_blank" rel="noopener" style="flex-shrink:0">Ver en Instagram →</a>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item wide fade-up">
+        <img src="valeska-vidal.png" alt="Valeska Vidal" onerror="this.parentNode.querySelector('.g-placeholder').style.display='flex';this.style.display='none'">
+        <div class="g-placeholder" style="display:none;background:linear-gradient(135deg,#F2D5DA,#E8B8C2)">🌿<span class="g-placeholder-label">@nutricionista_valevidal</span></div>
+        <div class="g-overlay"><span class="g-overlay-text">📸 @nutricionista_valevidal</span></div>
+      </div>
+      <div class="g-item fade-up" style="transition-delay:.05s">
+        <div class="g-placeholder" style="background:linear-gradient(135deg,#FDF0F3,#F5D8DF)">🥦<span class="g-placeholder-label">Nutrición</span></div>
+        <div class="g-overlay"><span class="g-overlay-text">Ver en IG</span></div>
+      </div>
+      <div class="g-item fade-up" style="transition-delay:.1s">
+        <div class="g-placeholder" style="background:linear-gradient(135deg,#FAF0F2,#F0D0D8)">🥗<span class="g-placeholder-label">Recetas</span></div>
+        <div class="g-overlay"><span class="g-overlay-text">Ver en IG</span></div>
+      </div>
+      <div class="g-item fade-up" style="transition-delay:.15s">
+        <div class="g-placeholder" style="background:linear-gradient(135deg,#F2D5DA,#E8B8C2)">⚖️<span class="g-placeholder-label">Tips</span></div>
+        <div class="g-overlay"><span class="g-overlay-text">Ver en IG</span></div>
+      </div>
+      <div class="g-item fade-up" style="transition-delay:.2s">
+        <div class="g-placeholder" style="background:linear-gradient(135deg,#FDF0F3,#ECC8D0)">💪<span class="g-placeholder-label">Bienestar</span></div>
+        <div class="g-overlay"><span class="g-overlay-text">Ver en IG</span></div>
+      </div>
+      <div class="g-item fade-up" style="transition-delay:.25s">
+        <div class="g-placeholder" style="background:linear-gradient(135deg,#FAF0F2,#F0D0D8)">🌿<span class="g-placeholder-label">Hábitos</span></div>
+        <div class="g-overlay"><span class="g-overlay-text">Ver en IG</span></div>
+      </div>
+    </div>
+    <div class="gallery-cta fade-up">
+      <a class="btn btn-fill" href="https://www.instagram.com/nutricionista_valevidal/" target="_blank" rel="noopener">📸 Ver todas las fotos en Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="booking-section" id="agenda">
+  <div class="wrap">
+    <div class="booking-header fade-up">
+      <p class="s-tag">Agenda tu cita</p>
+      <h2 class="s-title">Reserva tu consulta</h2>
+      <p class="s-desc">Elige el día y hora que mejor te acomode.</p>
+    </div>
+
+    <div class="booking-card fade-up">
+      <div class="booking-card-left">
+        <div class="booking-cal-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M3 9h18" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <rect x="7" y="13" width="3" height="3" rx=".5" fill="currentColor"/>
+            <rect x="11" y="13" width="3" height="3" rx=".5" fill="currentColor"/>
+          </svg>
+        </div>
+        <div>
+          <div class="booking-card-title">Agenda una hora directamente en mi calendario</div>
+          <p class="booking-card-sub">Selecciona el día y bloque que prefieras. Recibirás una confirmación automática por email con el link de la videollamada.</p>
+        </div>
+      </div>
+      <a class="booking-cta-btn" href="https://centrometabolico.site.agendapro.com/cl/sucursal/364121" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+        Ver disponibilidad
+      </a>
+    </div>
+
+    <div class="booking-details fade-up">
+      <div class="bdetail">
+        <div class="bdetail-ico">🕐</div>
+        <div class="bdetail-label">Duración</div>
+        <div class="bdetail-val">45 – 60 min</div>
+      </div>
+      <div class="bdetail">
+        <div class="bdetail-ico">💻</div>
+        <div class="bdetail-label">Modalidad</div>
+        <div class="bdetail-val">Videollamada</div>
+      </div>
+      <div class="bdetail">
+        <div class="bdetail-ico">📍</div>
+        <div class="bdetail-label">Presencial</div>
+        <div class="bdetail-val">Chile</div>
+      </div>
+      <div class="bdetail">
+        <div class="bdetail-ico">✅</div>
+        <div class="bdetail-label">Confirmación</div>
+        <div class="bdetail-val">Automática por email</div>
+      </div>
+      <div class="bdetail">
+        <div class="bdetail-ico">💬</div>
+        <div class="bdetail-label">¿Dudas?</div>
+        <div class="bdetail-val"><a href="https://wa.me/56975178135" target="_blank" rel="noopener">WhatsApp directo</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="fade-up">
+        <p class="s-tag">Contacto</p>
+        <h2 class="s-title">¿Lista/o para empezar?</h2>
+        <p class="s-desc">Escríbeme por WhatsApp y coordinamos tu primera consulta. Escríbeme y coordinamos tu consulta online.</p>
+        <div class="contact-cards">
+          <a class="ccard" href="https://wa.me/56975178135?text=Hola%20Valeska,%20me%20gustar%C3%ADa%20agendar%20una%20consulta" target="_blank" rel="noopener">
+            <span class="ccard-ico">💬</span>
+            <div>
+              <span class="ccard-label">WhatsApp</span>
+              <span class="ccard-val">+56 9 7517 8135</span>
+            </div>
+            <span class="ccard-arr">→</span>
+          </a>
+          <a class="ccard" href="https://www.instagram.com/nutricionista_valevidal/" target="_blank" rel="noopener">
+            <span class="ccard-ico">📸</span>
+            <div>
+              <span class="ccard-label">Instagram</span>
+              <span class="ccard-val">@nutricionista_valevidal</span>
+            </div>
+            <span class="ccard-arr">→</span>
+          </a>
+          <div class="ccard" style="cursor:default">
+            <span class="ccard-ico">📍</span>
+            <div>
+              <span class="ccard-label">Ubicación</span>
+              <span class="ccard-val">Chile · Online disponible</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-box fade-up" style="transition-delay:.15s">
+        <div class="contact-box-title">Envíame un mensaje</div>
+        <div class="contact-box-sub">Te responderé a la brevedad</div>
+        <div class="fg">
+          <label class="fl">Nombre</label>
+          <input class="fi" type="text" placeholder="Tu nombre" id="f-name">
+        </div>
+        <div class="fg">
+          <label class="fl">Email o WhatsApp</label>
+          <input class="fi" type="text" placeholder="Para coordinar la consulta" id="f-contact">
+        </div>
+        <div class="fg">
+          <label class="fl">¿Cuál es tu objetivo?</label>
+          <textarea class="ft" placeholder="Cuéntame brevemente..." id="f-msg"></textarea>
+        </div>
+        <button class="btn-submit" onclick="sendWA()">
+          💬 Enviar por WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Valeska Vidal</div>
+  <div class="footer-sub">Nutricionista · Chile</div>
+  <div class="footer-social">
+    <a class="fsoc" href="https://www.instagram.com/nutricionista_valevidal/" target="_blank" rel="noopener" title="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a class="fsoc" href="https://wa.me/56975178135" target="_blank" rel="noopener" title="WhatsApp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+  </div>
+  <div class="footer-links">
+    <a href="#sobre">Sobre mí</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <div class="footer-copy">© 2025 Valeska Vidal · Nutricionista · Todos los derechos reservados</div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Fade up observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Mobile menu
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = '';
+    } else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:rgba(17,13,13,.97);padding:2rem;gap:1.5rem;z-index:99';
+    }
+  }
+
+  // WhatsApp form send
+  function sendWA() {
+    const name = document.getElementById('f-name').value.trim();
+    const contact = document.getElementById('f-contact').value.trim();
+    const msg = document.getElementById('f-msg').value.trim();
+    if (!name) { alert('Por favor ingresa tu nombre'); return; }
+    const text = `Hola Valeska! Soy ${name}.${contact ? ' Contacto: '+contact+'.' : ''} ${msg ? 'Mensaje: '+msg : 'Me gustaría agendar una consulta.'}`;
+    window.open('https://wa.me/56975178135?text=' + encodeURIComponent(text), '_blank');
+  }
+</script>
+</body>
+</html>
